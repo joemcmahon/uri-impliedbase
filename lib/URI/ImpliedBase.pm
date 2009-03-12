@@ -6,7 +6,7 @@ use URI;
 BEGIN {
 	use Exporter ();
 	use vars qw ($VERSION @ISA @EXPORT @EXPORT_OK %EXPORT_TAGS);
-	$VERSION     = 0.05;
+	$VERSION     = 0.06;
 	@ISA         = qw (Exporter URI);
 	#Give a hoot don't pollute, do not export more than needed by default
 	@EXPORT      = qw ();
@@ -109,6 +109,20 @@ this code has I<not> been tested in these environments.
 
 my $current_base = "";
 
+=head1 METHODS
+
+=head2 new
+
+Accepts a URI and figures out what the proper base is for it.
+
+If the scheme is defined, we can just save the current URI as
+the base. If there's a path but no scheme, we have to determine
+the proper base: if the base has already been determined by a 
+previous call, then we use that. Otherwise we figure out the 
+current working directory and use that.
+
+=cut 
+
 sub new {
   my ($class, $uri_string) = @_;
   my $result;
@@ -139,9 +153,21 @@ sub new {
   $result;
 }
 
+=head2 current_base
+
+Returns the currently-derived base URI.
+
+=cut
+
 sub current_base {
   $current_base;
 }
+
+=head2 clear
+
+Deletes the current implied base.
+
+=cut
 
 sub clear {
   $current_base = "";

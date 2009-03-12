@@ -1,5 +1,9 @@
 Revision history for Perl module URI::ImpliedBase
 
+0.06 Wed Aug 31 16:49:30 2005
+	- added pod and pod-coverage tests
+	- updated documentation
+
 0.05 Fri Apr 23 13:12:34 2004
 	- Changes tests to use right module name. Duh.
 
