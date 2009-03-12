@@ -4,10 +4,10 @@
 
 use Test::More tests => 3;
 
-BEGIN { use_ok( 'URI::DefaultBased' ); }
+BEGIN { use_ok( 'URI::ImpliedBase' ); }
 
-my $object = URI::DefaultBased->new("http://blah.foo.com");
-is(URI::DefaultBased->current_base, "http://blah.foo.com");
+my $object = URI::ImpliedBase->new("http://blah.foo.com");
+is(URI::ImpliedBase->current_base, "http://blah.foo.com");
 
-$object = URI::DefaultBased->new("subdir/one");
+$object = URI::ImpliedBase->new("subdir/one");
 is($object->as_string, "http://blah.foo.com/subdir/one");

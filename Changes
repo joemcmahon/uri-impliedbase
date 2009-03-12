@@ -1,5 +1,8 @@
 Revision history for Perl module URI::ImpliedBase
 
+0.05 Fri Apr 23 13:12:34 2004
+	- Changes tests to use right module name. Duh.
+
 0.04 Wed Mar 10 13:17:08 2004
 	- Removed LWP forcing
 

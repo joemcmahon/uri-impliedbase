@@ -5,10 +5,10 @@
 use Test::More tests => 3;
 use Cwd;
 
-BEGIN { use_ok( 'URI::DefaultBased' ); }
+BEGIN { use_ok( 'URI::ImpliedBase' ); }
 
-my $object = URI::DefaultBased->new("test");
-is(URI::DefaultBased->current_base,"file://".getcwd()."/test");
+my $object = URI::ImpliedBase->new("test");
+is(URI::ImpliedBase->current_base,"file://".getcwd()."/test");
 is($object->as_string, "file://".getcwd()."/test");
 
 

@@ -4,9 +4,9 @@
 
 use Test::More tests => 2;
 
-BEGIN { use_ok( 'URI::DefaultBased' ); }
+BEGIN { use_ok( 'URI::ImpliedBase' ); }
 
-my $object = URI::DefaultBased->new ();
+my $object = URI::ImpliedBase->new ();
 isa_ok ($object, 'URI::_generic');
 
 
