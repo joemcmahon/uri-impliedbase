@@ -1,0 +1,14 @@
+Revision history for Perl module URI::ImpliedBase
+
+0.04 Wed Mar 10 13:17:08 2004
+	- Removed LWP forcing
+
+0.03 Wed Mar 10 11:23:17 2004
+	- Change module name from URI::DefaultBased to URI::ImpliedBase
+
+0.02 Tue Mar  9 16:35:35 2004
+	- Added $HTTP::URI_CLASS setting to make LWP use this class for URIs       
+0.01 Tue Mar  9 12:46:14 2004
+	- original version; created by ExtUtils::ModuleMaker 0.32
+
+

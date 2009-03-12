@@ -1,0 +1,16 @@
+MANIFEST
+LICENSE
+README
+Todo
+Changes
+lib/URI/ImpliedBase.pm
+t/001_load.t
+t/002_abs.t
+t/003_set_base.t
+t/004_relative1.t
+t/005_relative2.t
+t/006_relative3.t
+t/007_dots.t
+t/008_clear.t
+Makefile.PL
+META.yml                                 Module meta-data (added by MakeMaker)
