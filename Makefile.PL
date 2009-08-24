@@ -6,6 +6,7 @@ WriteMakefile(
     VERSION_FROM => 'lib/URI/ImpliedBase.pm', # finds $VERSION
     AUTHOR       => 'Joe McMahon (mcmahon@ibiblio.org)',
     ABSTRACT     => 'URIs that magically set a default base',
+    LICENSE      => 'artistic',
     PREREQ_PM    => {
                      'Test::Simple' => 0.44,
                      'URI' => 0,
