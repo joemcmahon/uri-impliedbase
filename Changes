@@ -1,4 +1,7 @@
 Revision history for Perl module URI::ImpliedBase
+0.08 Sun Jul  8 11:23:14 PDT 2012
+    - added support for accepted_schemes
+
 0.07 Sun Aug 23 23:47:04 PDT 2009
 	- added license
 	- update META.yml format

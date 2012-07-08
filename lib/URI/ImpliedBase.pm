@@ -6,7 +6,7 @@ use URI;
 BEGIN {
 	use Exporter ();
 	use vars qw ($VERSION @ISA @EXPORT @EXPORT_OK %EXPORT_TAGS);
-	$VERSION     = 0.07;
+	$VERSION     = 0.08;
 	@ISA         = qw (Exporter URI);
 	#Give a hoot don't pollute, do not export more than needed by default
 	@EXPORT      = qw ();
@@ -50,6 +50,15 @@ You can force a new base at any time by calling C<URI::ImpliedBase->clear()>.
 =head1 USAGE
 
 See the X<SYNOPSIS> section for typical usage.
+
+=head1 NOTES
+
+Each time you call URI::ImpliedBase->new(), URI::ImpliedBase checks the scheme
+of the supplied URL against @URI::ImpliedBase::accepted_schemes. If the 
+scheme of the new URI is in the list of accepted schemes, we update the base.
+
+The initial set of schemes which update the base are 'http' and 'https'. You
+may update the list of schemes by altering @URI::ImpliedBase::accepted_schemes.
 
 =head1 BUGS
 
@@ -107,7 +116,8 @@ this code has I<not> been tested in these environments.
 
 =cut
 
-my $current_base = "";
+our $current_base = "";
+our @accepted_schemes = qw(http https);
 
 =head1 METHODS
 
@@ -128,7 +138,8 @@ sub new {
   my $result;
 
   my $probe_uri = URI->new($uri_string);
-  if ($probe_uri->scheme) {
+  if ($probe_uri->scheme and
+      grep {$_ eq $probe_uri->scheme} @accepted_schemes) {
     # New base. Save it.
     $current_base = $probe_uri->as_string;
     $result = $probe_uri;
